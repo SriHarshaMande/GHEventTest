@@ -22,6 +22,7 @@ jobs:
           echo "Run unit tests: ${{ github.event.inputs.runTests }}"
           echo "Run WS scan: ${{ github.event.inputs.runWhiteSourceScan }}"
           echo "Running on branch: ${{ github.ref }}"
+          exit 1
 
 
       - name: Echo runWhiteSourceScan
@@ -33,5 +34,5 @@ jobs:
       - name: Echo runTests
         if: ${{ github.event.inputs.runTests }}
         run: | 
-          echo "Run WS scan: ${{ github.event.inputs.runTests }}"
+          echo "Run runTests scan: ${{ github.event.inputs.runTests }}"
           echo "Running on branch: ${{ github.ref }}"
