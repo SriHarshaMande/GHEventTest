@@ -25,7 +25,7 @@ jobs:
 
 
       - name: Echo runWhiteSourceScan
-        if: ${{ github.event.inputs.runWhiteSourceScan }}
+        if: ${{ github.event.inputs.runWhiteSourceScan == 'true'}}
         run: | 
           echo "Run WS scan: ${{ github.event.inputs.runWhiteSourceScan }}"
           echo "Running on branch: ${{ github.ref }}"
