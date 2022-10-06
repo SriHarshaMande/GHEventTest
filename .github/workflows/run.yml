@@ -17,7 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo inputs
-        continue-on-error: true
         id: build-init
         run: | 
           echo "Run unit tests: ${{ github.event.inputs.runTests }}"
