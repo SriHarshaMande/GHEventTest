@@ -1,0 +1,37 @@
+name: Personal Build
+on:
+  workflow_dispatch: # manual trigger
+    inputs:
+      runTests:
+        description: Run unit tests
+        type: boolean
+        required: false
+        default: true
+      runWhiteSourceScan:
+        description: Run WhiteSource scan
+        type: boolean
+        required: false
+        default: false
+jobs:
+  personalbuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo inputs
+        id: build-init
+        run: | 
+          echo "Run unit tests: ${{ github.event.inputs.runTests }}"
+          echo "Run WS scan: ${{ github.event.inputs.runWhiteSourceScan }}"
+          echo "Running on branch: ${{ github.ref }}"
+
+
+      - name: Echo runWhiteSourceScan
+        if: ${{ github.event.inputs.runWhiteSourceScan }}
+        run: | 
+          echo "Run WS scan: ${{ github.event.inputs.runWhiteSourceScan }}"
+          echo "Running on branch: ${{ github.ref }}"
+
+      - name: Echo runTests
+        if: ${{ github.event.inputs.runTests }}
+        run: | 
+          echo "Run WS scan: ${{ github.event.inputs.runTests }}"
+          echo "Running on branch: ${{ github.ref }}"
