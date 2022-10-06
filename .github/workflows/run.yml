@@ -33,7 +33,7 @@ jobs:
           echo "Running on branch: ${{ github.ref }}"
 
       - name: Echo runTests
-        if: ${{ github.event.inputs.runTests == 'true'}}
+        if: success() || failure() || ${{ github.event.inputs.runTests == 'true'}}
         run: | 
           echo "Run runTests scan: ${{ github.event.inputs.runTests }}"
           echo "Running on branch: ${{ github.ref }}"
