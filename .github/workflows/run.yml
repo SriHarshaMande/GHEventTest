@@ -24,7 +24,7 @@ jobs:
         run: |
          echo "workSpace ${{github.workspace}}"
          echo "env ${{env.Et}}"
-         echo "env {{env.Et}}"
+         echo {{env.Et}}
         
       - name: Echo inputs
         id: build-init
