@@ -14,8 +14,8 @@ on:
         default: false
 
 env:
-  Et:${{github.workspace}}
-  
+  Et: ${{github.workspace}}
+
 jobs:
   personalbuild:
     runs-on: ubuntu-latest
