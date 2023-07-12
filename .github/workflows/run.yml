@@ -12,10 +12,20 @@ on:
         type: boolean
         required: false
         default: false
+
+env:
+  Et:${{github.workspace}}
+  
 jobs:
   personalbuild:
     runs-on: ubuntu-latest
     steps:
+      - name: Echo Env
+        run: |
+         echo "workSpace ${{github.workspace}}"
+         echo "env ${{env.Et}}"
+         echo "env {{env.Et}}"
+        
       - name: Echo inputs
         id: build-init
         run: | 
